@@ -17,13 +17,13 @@ public class GoogleTest extends BaseTest {
         driver.get(config.getProperty("baseurl"));
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div[3]/form/div[2]/div[1]/div[1]/div/div[2]/input")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@class='gLFyf gsfi']")));
 
         String randomWord = RandomWordExtractor.extract(config.getProperty("random.word.site.url"), "random_word");
 
-        WebElement webElement = driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[2]/div[1]/div[1]/div/div[2]/input"));
+        WebElement webElement = driver.findElement(By.xpath("//input[@class='gLFyf gsfi']"));
 
         webElement.sendKeys(randomWord);
-        driver.findElement(By.xpath("//input[@class=\"gNO89b\"]")).click();
+        driver.findElement(By.xpath("//input[@class='gNO89b']")).click();
     }
 }
